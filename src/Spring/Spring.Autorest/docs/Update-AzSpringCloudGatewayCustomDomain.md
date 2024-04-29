@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-AzSpringCloudGatewayCustomDomain
 
 ## SYNOPSIS
-Create the Spring Cloud Gateway custom domain.
+Update the Spring Cloud Gateway custom domain.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Update-AzSpringCloudGatewayCustomDomain -DomainName <String> -GatewayName <Strin
 ```
 
 ## DESCRIPTION
-Create the Spring Cloud Gateway custom domain.
+Update the Spring Cloud Gateway custom domain.
 
 ## EXAMPLES
 
@@ -116,7 +116,6 @@ Accept wildcard characters: False
 
 ### -GatewayInputObject
 Identity Parameter
-To construct, see NOTES section for GATEWAYINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -147,7 +146,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -209,7 +207,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

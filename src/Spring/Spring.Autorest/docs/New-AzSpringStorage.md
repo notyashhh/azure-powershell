@@ -15,20 +15,20 @@ Create storage resource.
 ### CreateExpanded (Default)
 ```
 New-AzSpringStorage -Name <String> -ResourceGroupName <String> -ServiceName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SubscriptionId <String>] [-Property <IStorageProperties>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-AzSpringStorage -InputObject <ISpringAppsIdentity> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSpringStorage -InputObject <ISpringAppsIdentity> [-Property <IStorageProperties>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentitySpringExpanded
 ```
-New-AzSpringStorage -Name <String> -SpringInputObject <ISpringAppsIdentity> [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSpringStorage -Name <String> -SpringInputObject <ISpringAppsIdentity> [-Property <IStorageProperties>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaJsonFilePath
@@ -50,27 +50,30 @@ Create storage resource.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Create storage resource.
 ```powershell
-{{ Add code here }}
+$storageObj = New-AzSpringStorageTypeObject -AccountKey "Uqr******iA==" -AccountName azpssa
+New-AzSpringStorage -ResourceGroupName azps_test_group_spring -ServiceName azps-spring-01 -Name azps-storage -Property $storageObj
 ```
 
 ```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
+Id                           : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/azps_test_group_spring/providers/Microsoft.AppPlatform/Spring/azps-spring-01/storages/azps-storage
+Name                         : azps-storage
+Property                     : {
+                                 "storageType": "StorageAccount",
+                                 "accountName": "azpssa"
+                               }
+ResourceGroupName            : azps_test_group_spring
+SystemDataCreatedAt          :
+SystemDataCreatedBy          :
+SystemDataCreatedByType      :
+SystemDataLastModifiedAt     :
+SystemDataLastModifiedBy     :
+SystemDataLastModifiedByType :
+Type                         : Microsoft.AppPlatform/Spring/storages
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
-```
-
-{{ Add description here }}
+Create storage resource.
 
 ## PARAMETERS
 
@@ -107,7 +110,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -181,6 +183,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Property
+Properties of the storage resource payload.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IStorageProperties
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded, CreateViaIdentitySpringExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceGroupName
 The name of the resource group that contains the resource.
 You can obtain this value from the Azure Resource Manager API or the portal.
@@ -214,7 +231,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

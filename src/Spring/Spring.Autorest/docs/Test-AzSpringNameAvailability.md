@@ -80,7 +80,6 @@ Checks that the resource name is valid and is not already in use.
 
 ### -AvailabilityParameter
 Name availability parameters payload
-To construct, see NOTES section for AVAILABILITYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.INameAvailabilityParameters
@@ -112,7 +111,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

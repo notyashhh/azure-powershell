@@ -8,31 +8,32 @@ schema: 2.0.0
 # Update-AzSpringStorage
 
 ## SYNOPSIS
-Create storage resource.
+Update storage resource.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-AzSpringStorage -Name <String> -ResourceGroupName <String> -ServiceName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SubscriptionId <String>] [-Property <IStorageProperties>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzSpringStorage -InputObject <ISpringAppsIdentity> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzSpringStorage -InputObject <ISpringAppsIdentity> [-Property <IStorageProperties>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentitySpringExpanded
 ```
-Update-AzSpringStorage -Name <String> -SpringInputObject <ISpringAppsIdentity> [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzSpringStorage -Name <String> -SpringInputObject <ISpringAppsIdentity>
+ [-Property <IStorageProperties>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create storage resource.
+Update storage resource.
 
 ## EXAMPLES
 
@@ -93,7 +94,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -137,6 +137,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Property
+Properties of the storage resource payload.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IStorageProperties
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceGroupName
 The name of the resource group that contains the resource.
 You can obtain this value from the Azure Resource Manager API or the portal.
@@ -170,7 +185,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

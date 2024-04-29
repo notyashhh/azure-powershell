@@ -8,27 +8,27 @@ schema: 2.0.0
 # New-AzSpringConfigurationService
 
 ## SYNOPSIS
-Create the default Application Configuration Service or update the existing Application Configuration Service.
+Create the default Application Configuration Service or Create the existing Application Configuration Service.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-AzSpringConfigurationService -ResourceGroupName <String> -ServiceName <String> [-SubscriptionId <String>]
- [-GitRepository <IConfigurationServiceGitRepository[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Generation <String>] [-GitRepository <IConfigurationServiceGitRepository[]>] [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
-New-AzSpringConfigurationService -InputObject <ISpringAppsIdentity>
+New-AzSpringConfigurationService -InputObject <ISpringAppsIdentity> [-Generation <String>]
  [-GitRepository <IConfigurationServiceGitRepository[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentitySpringExpanded
 ```
-New-AzSpringConfigurationService -SpringInputObject <ISpringAppsIdentity>
+New-AzSpringConfigurationService -SpringInputObject <ISpringAppsIdentity> [-Generation <String>]
  [-GitRepository <IConfigurationServiceGitRepository[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -48,17 +48,18 @@ New-AzSpringConfigurationService -ResourceGroupName <String> -ServiceName <Strin
 ```
 
 ## DESCRIPTION
-Create the default Application Configuration Service or update the existing Application Configuration Service.
+Create the default Application Configuration Service or Create the existing Application Configuration Service.
 
 ## EXAMPLES
 
-### Example 1: Create the default Application Configuration Service or update the existing Application Configuration Service.
+### Example 1: Create the default Application Configuration Service or Create the existing Application Configuration Service.
 ```powershell
 $servicegitObj = New-AzSpringConfigurationServiceGitObject -Label "master" -Name "ghatest" -Pattern "app/dev" -Uri "https://github.com/lijinpei2008/ghatest"
 New-AzSpringConfigurationService -ResourceGroupName azps_test_group_spring -ServiceName azps-spring-01 -GitRepository $servicegitObj
 ```
 
 ```output
+Generation                   :
 GitPropertyRepository        : {{
                                  "name": "ghatest",
                                  "patterns": [ "app/dev" ],
@@ -67,10 +68,10 @@ GitPropertyRepository        : {{
                                }}
 Id                           : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/azps_test_group_spring/providers/Microsoft.AppPlatform/Spring/azps-spring-01/configurationServices/default
 Instance                     : {{
-                                 "name": "application-configuration-service-674f48b866-clsh5",
+                                 "name": "application-configuration-service-7c6755755b-mrz4m",
                                  "status": "Running"
                                }, {
-                                 "name": "application-configuration-service-674f48b866-g8tgc",
+                                 "name": "application-configuration-service-7c6755755b-rnz7j",
                                  "status": "Running"
                                }}
 Name                         : default
@@ -79,16 +80,16 @@ ResourceGroupName            : azps_test_group_spring
 ResourceRequestCpu           : 500m
 ResourceRequestInstanceCount : 2
 ResourceRequestMemory        : 1Gi
-SystemDataCreatedAt          : 2023-12-19 上午 09:37:05
+SystemDataCreatedAt          : 2024-04-26 上午 07:46:44
 SystemDataCreatedBy          : v-jinpel@microsoft.com
 SystemDataCreatedByType      : User
-SystemDataLastModifiedAt     : 2023-12-19 上午 09:39:12
+SystemDataLastModifiedAt     : 2024-04-26 上午 07:46:44
 SystemDataLastModifiedBy     : v-jinpel@microsoft.com
 SystemDataLastModifiedByType : User
 Type                         : Microsoft.AppPlatform/Spring/configurationServices
 ```
 
-Create the default Application Configuration Service or update the existing Application Configuration Service.
+Create the default Application Configuration Service or Create the existing Application Configuration Service.
 
 ## PARAMETERS
 
@@ -123,9 +124,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Generation
+The generation of the Application Configuration Service.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded, CreateViaIdentitySpringExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GitRepository
 Repositories of Application Configuration Service git property.
-To construct, see NOTES section for GITREPOSITORY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IConfigurationServiceGitRepository[]
@@ -141,7 +156,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -233,7 +247,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

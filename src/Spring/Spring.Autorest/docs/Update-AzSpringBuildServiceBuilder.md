@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-AzSpringBuildServiceBuilder
 
 ## SYNOPSIS
-Create a KPack builder.
+Update a KPack builder.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Update-AzSpringBuildServiceBuilder -Name <String> -SpringInputObject <ISpringApp
 ```
 
 ## DESCRIPTION
-Create a KPack builder.
+Update a KPack builder.
 
 ## EXAMPLES
 
@@ -87,7 +87,6 @@ Accept wildcard characters: False
 
 ### -BuildpackGroup
 Builder buildpack groups.
-To construct, see NOTES section for BUILDPACKGROUP properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IBuildpacksGroupProperties[]
@@ -103,7 +102,6 @@ Accept wildcard characters: False
 
 ### -BuildServiceInputObject
 Identity Parameter
-To construct, see NOTES section for BUILDSERVICEINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -135,7 +133,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -212,7 +209,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

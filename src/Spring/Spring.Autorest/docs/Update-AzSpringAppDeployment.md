@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-AzSpringAppDeployment
 
 ## SYNOPSIS
-Operation to update an exiting Deployment.
+Operation to Update an exiting Deployment.
 
 ## SYNTAX
 
@@ -59,7 +59,7 @@ Update-AzSpringAppDeployment -AppName <String> -Name <String> -ResourceGroupName
 ```
 
 ## DESCRIPTION
-Operation to update an exiting Deployment.
+Operation to Update an exiting Deployment.
 
 ## EXAMPLES
 
@@ -104,7 +104,6 @@ Accept wildcard characters: False
 
 ### -AppInputObject
 Identity Parameter
-To construct, see NOTES section for APPINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -166,7 +165,6 @@ Accept wildcard characters: False
 
 ### -DeploymentSetting
 Deployment settings of the Deployment
-To construct, see NOTES section for DEPLOYMENTSETTING properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IDeploymentSettings
@@ -182,7 +180,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -334,7 +331,6 @@ Accept wildcard characters: False
 
 ### -Source
 Uploaded source information of the deployment.
-To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IUserSourceInfo
@@ -350,7 +346,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

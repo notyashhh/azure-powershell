@@ -14,8 +14,8 @@ Get a buildpack binding by name.
 
 ### List (Default)
 ```
-Get-AzSpringBuildpackBinding -BuilderName <String> -ResourceGroupName <String> -ServiceName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzSpringBuildpackBinding -ResourceGroupName <String> -ServiceName <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### Get
@@ -46,6 +46,12 @@ Get-AzSpringBuildpackBinding -BuilderName <String> -BuildServiceInputObject <ISp
 ```
 Get-AzSpringBuildpackBinding -BuilderName <String> -Name <String> -SpringInputObject <ISpringAppsIdentity>
  [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### List1
+```
+Get-AzSpringBuildpackBinding -BuilderName <String> -ResourceGroupName <String> -ServiceName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -215,7 +221,6 @@ Get a buildpack binding by name.
 
 ### -BuilderInputObject
 Identity Parameter
-To construct, see NOTES section for BUILDERINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -234,7 +239,7 @@ The name of the builder resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, GetViaIdentityBuildService, GetViaIdentitySpring, List
+Parameter Sets: Get, GetViaIdentityBuildService, GetViaIdentitySpring, List1
 Aliases:
 
 Required: True
@@ -246,7 +251,6 @@ Accept wildcard characters: False
 
 ### -BuildServiceInputObject
 Identity Parameter
-To construct, see NOTES section for BUILDSERVICEINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -278,7 +282,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -313,7 +316,7 @@ You can obtain this value from the Azure Resource Manager API or the portal.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: True
@@ -328,7 +331,7 @@ The name of the Service resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: True
@@ -340,7 +343,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -360,7 +362,7 @@ The subscription ID forms part of the URI for every service call.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, List
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: False

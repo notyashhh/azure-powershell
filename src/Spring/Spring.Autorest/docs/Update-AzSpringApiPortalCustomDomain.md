@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-AzSpringApiPortalCustomDomain
 
 ## SYNOPSIS
-Create the API portal custom domain.
+Update the API portal custom domain.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Update-AzSpringApiPortalCustomDomain -ApiPortalName <String> -DomainName <String
 ```
 
 ## DESCRIPTION
-Create the API portal custom domain.
+Update the API portal custom domain.
 
 ## EXAMPLES
 
@@ -70,7 +70,6 @@ Create the API portal custom domain.
 
 ### -ApiPortalInputObject
 Identity Parameter
-To construct, see NOTES section for APIPORTALINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -147,7 +146,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -209,7 +207,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

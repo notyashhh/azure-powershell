@@ -8,42 +8,45 @@ schema: 2.0.0
 # Update-AzSpringBuildService
 
 ## SYNOPSIS
-Create a KPack build.
+Update a KPack build.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-AzSpringBuildService -BuildName <String> -ResourceGroupName <String> -ServiceName <String>
- [-SubscriptionId <String>] [-AgentPool <String>] [-Builder <String>] [-Env <Hashtable>]
- [-RelativePath <String>] [-ResourceRequestCpu <String>] [-ResourceRequestMemory <String>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SubscriptionId <String>] [-AgentPool <String>] [-Apm <IApmReference[]>] [-Builder <String>]
+ [-Certificate <ICertificateReference[]>] [-Env <Hashtable>] [-RelativePath <String>]
+ [-ResourceRequestCpu <String>] [-ResourceRequestMemory <String>] [-DefaultProfile <PSObject>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityBuildServiceExpanded
 ```
 Update-AzSpringBuildService -BuildName <String> -BuildServiceInputObject <ISpringAppsIdentity>
- [-AgentPool <String>] [-Builder <String>] [-Env <Hashtable>] [-RelativePath <String>]
- [-ResourceRequestCpu <String>] [-ResourceRequestMemory <String>] [-DefaultProfile <PSObject>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AgentPool <String>] [-Apm <IApmReference[]>] [-Builder <String>] [-Certificate <ICertificateReference[]>]
+ [-Env <Hashtable>] [-RelativePath <String>] [-ResourceRequestCpu <String>] [-ResourceRequestMemory <String>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzSpringBuildService -InputObject <ISpringAppsIdentity> [-AgentPool <String>] [-Builder <String>]
- [-Env <Hashtable>] [-RelativePath <String>] [-ResourceRequestCpu <String>] [-ResourceRequestMemory <String>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzSpringBuildService -InputObject <ISpringAppsIdentity> [-AgentPool <String>] [-Apm <IApmReference[]>]
+ [-Builder <String>] [-Certificate <ICertificateReference[]>] [-Env <Hashtable>] [-RelativePath <String>]
+ [-ResourceRequestCpu <String>] [-ResourceRequestMemory <String>] [-DefaultProfile <PSObject>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentitySpringExpanded
 ```
 Update-AzSpringBuildService -BuildName <String> -SpringInputObject <ISpringAppsIdentity> [-AgentPool <String>]
- [-Builder <String>] [-Env <Hashtable>] [-RelativePath <String>] [-ResourceRequestCpu <String>]
- [-ResourceRequestMemory <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Apm <IApmReference[]>] [-Builder <String>] [-Certificate <ICertificateReference[]>] [-Env <Hashtable>]
+ [-RelativePath <String>] [-ResourceRequestCpu <String>] [-ResourceRequestMemory <String>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a KPack build.
+Update a KPack build.
 
 ## EXAMPLES
 
@@ -86,6 +89,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Apm
+The APMs for this build
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IApmReference[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Builder
 The resource id of builder to build the source code
 
@@ -118,7 +136,6 @@ Accept wildcard characters: False
 
 ### -BuildServiceInputObject
 Identity Parameter
-To construct, see NOTES section for BUILDSERVICEINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -129,6 +146,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Certificate
+The CA Certificates for this build
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ICertificateReference[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -165,7 +197,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -261,7 +292,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

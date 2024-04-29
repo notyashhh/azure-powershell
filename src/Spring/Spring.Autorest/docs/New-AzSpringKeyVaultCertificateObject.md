@@ -13,8 +13,8 @@ Create an in-memory object for KeyVaultCertificateProperties.
 ## SYNTAX
 
 ```
-New-AzSpringKeyVaultCertificateObject -KeyVaultCertName <String> -VaultUri <String> [-CertVersion <String>]
- [-ExcludePrivateKey <Boolean>] [<CommonParameters>]
+New-AzSpringKeyVaultCertificateObject -KeyVaultCertName <String> -VaultUri <String> [-AutoSync <String>]
+ [-CertVersion <String>] [-ExcludePrivateKey <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,6 +45,21 @@ Create an in-memory object for KeyVaultCertificateProperties.
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AutoSync
+Indicates whether to automatically synchronize certificate from key vault or not.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -CertVersion
 The certificate version of key vault.

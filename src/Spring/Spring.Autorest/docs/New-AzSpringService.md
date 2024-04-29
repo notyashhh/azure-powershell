@@ -8,29 +8,33 @@ schema: 2.0.0
 # New-AzSpringService
 
 ## SYNOPSIS
-Create a new Service or update an exiting Service.
+Create a new Service or Create an exiting Service.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-AzSpringService -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-IngressConfigReadTimeoutInSecond <Int32>] [-Location <String>] [-NetworkProfileOutboundType <String>]
- [-NetworkProfileResourceGroup <String>] [-NetworkProfileServiceCidr <String>]
- [-NetworkProfileServiceResourceGroup <String>] [-NetworkProfileServiceSubnetId <String>]
- [-NetworkProfileSubnetId <String>] [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>]
- [-Tag <Hashtable>] [-VnetAddonLogStreamPublicEndpoint] [-ZoneRedundant] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IngressConfigReadTimeoutInSecond <Int32>] [-Location <String>] [-MarketplaceResourcePlan <String>]
+ [-MarketplaceResourceProduct <String>] [-MarketplaceResourcePublisher <String>]
+ [-NetworkProfileOutboundType <String>] [-NetworkProfileResourceGroup <String>]
+ [-NetworkProfileServiceCidr <String>] [-NetworkProfileServiceResourceGroup <String>]
+ [-NetworkProfileServiceSubnetId <String>] [-NetworkProfileSubnetId <String>] [-SkuCapacity <Int32>]
+ [-SkuName <String>] [-SkuTier <String>] [-Tag <Hashtable>] [-VnetAddonDataPlanePublicEndpoint]
+ [-VnetAddonLogStreamPublicEndpoint] [-ZoneRedundant] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-AzSpringService -InputObject <ISpringAppsIdentity> [-IngressConfigReadTimeoutInSecond <Int32>]
- [-Location <String>] [-NetworkProfileOutboundType <String>] [-NetworkProfileResourceGroup <String>]
- [-NetworkProfileServiceCidr <String>] [-NetworkProfileServiceResourceGroup <String>]
- [-NetworkProfileServiceSubnetId <String>] [-NetworkProfileSubnetId <String>] [-SkuCapacity <Int32>]
- [-SkuName <String>] [-SkuTier <String>] [-Tag <Hashtable>] [-VnetAddonLogStreamPublicEndpoint]
- [-ZoneRedundant] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Location <String>] [-MarketplaceResourcePlan <String>] [-MarketplaceResourceProduct <String>]
+ [-MarketplaceResourcePublisher <String>] [-NetworkProfileOutboundType <String>]
+ [-NetworkProfileResourceGroup <String>] [-NetworkProfileServiceCidr <String>]
+ [-NetworkProfileServiceResourceGroup <String>] [-NetworkProfileServiceSubnetId <String>]
+ [-NetworkProfileSubnetId <String>] [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>]
+ [-Tag <Hashtable>] [-VnetAddonDataPlanePublicEndpoint] [-VnetAddonLogStreamPublicEndpoint] [-ZoneRedundant]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaJsonFilePath
@@ -47,11 +51,11 @@ New-AzSpringService -Name <String> -ResourceGroupName <String> -JsonString <Stri
 ```
 
 ## DESCRIPTION
-Create a new Service or update an exiting Service.
+Create a new Service or Create an exiting Service.
 
 ## EXAMPLES
 
-### Example 1: Create a new Service or update an exiting Service.
+### Example 1: Create a new Service or Create an exiting Service.
 ```powershell
 New-AzSpringService -ResourceGroupName azps_test_group_spring -Name azps-spring-01 -Location eastus -SkuTier "Enterprise" -SkuName "E0"
 ```
@@ -61,6 +65,9 @@ Fqdn                                             : azps-spring-01.azuremicroserv
 Id                                               : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/azps_test_group_spring/providers/Microsoft.AppPlatform/Spring/azps-spring-01
 IngressConfigReadTimeoutInSecond                 :
 Location                                         : eastus
+MarketplaceResourcePlan                          : asa-ent-hr-mtr
+MarketplaceResourceProduct                       : azure-spring-cloud-vmware-tanzu-2
+MarketplaceResourcePublisher                     : vmware-inc
 Name                                             : azps-spring-01
 NetworkProfileAppNetworkResourceGroup            :
 NetworkProfileAppSubnetId                        :
@@ -69,31 +76,32 @@ NetworkProfileRequiredTraffic                    :
 NetworkProfileServiceCidr                        :
 NetworkProfileServiceRuntimeNetworkResourceGroup :
 NetworkProfileServiceRuntimeSubnetId             :
-OutboundIPPublicIP                               : {4.255.75.210, 4.255.75.214}
+OutboundIPPublicIP                               : {20.253.92.83, 20.253.92.97}
 PowerState                                       : Running
 ProvisioningState                                : Succeeded
 ResourceGroupName                                : azps_test_group_spring
-ServiceId                                        : 0c6aeadde5dd43cfa31ee4e078381260
+ServiceId                                        : 0871555f28044a46bdc0f31682b862ef
 SkuCapacity                                      :
 SkuName                                          : E0
 SkuTier                                          : Enterprise
-SystemDataCreatedAt                              : 2023-12-13 上午 08:24:54
+SystemDataCreatedAt                              : 2024-04-24 上午 05:49:39
 SystemDataCreatedBy                              : v-jinpel@microsoft.com
 SystemDataCreatedByType                          : User
-SystemDataLastModifiedAt                         : 2023-12-13 上午 08:24:54
+SystemDataLastModifiedAt                         : 2024-04-24 上午 05:49:39
 SystemDataLastModifiedBy                         : v-jinpel@microsoft.com
 SystemDataLastModifiedByType                     : User
 Tag                                              : {
                                                    }
 Type                                             : Microsoft.AppPlatform/Spring
 Version                                          : 3
+VnetAddonDataPlanePublicEndpoint                 :
 VnetAddonLogStreamPublicEndpoint                 :
 ZoneRedundant                                    : False
 ```
 
-Create a new Service or update an exiting Service.
+Create a new Service or Create an exiting Service.
 
-### Example 2: Create a new Service or update an exiting Service.
+### Example 2: Create a new Service or Create an exiting Service.
 ```powershell
 New-AzSpringService -ResourceGroupName azps_test_group_spring -Name azps-spring-02 -Location eastus
 ```
@@ -133,7 +141,7 @@ VnetAddonLogStreamPublicEndpoint                 :
 ZoneRedundant                                    : False
 ```
 
-Create a new Service or update an exiting Service.
+Create a new Service or Create an exiting Service.
 
 ## PARAMETERS
 
@@ -185,7 +193,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -231,6 +238,51 @@ Accept wildcard characters: False
 
 ### -Location
 The GEO location of the resource.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MarketplaceResourcePlan
+The plan id of the 3rd Party Artifact that is being procured.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MarketplaceResourceProduct
+The 3rd Party artifact that is being procured.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MarketplaceResourcePublisher
+The publisher id of the 3rd Party Artifact that is being bought.
 
 ```yaml
 Type: System.String
@@ -446,6 +498,21 @@ Tags of the service which is a list of key value pairs that describe the resourc
 
 ```yaml
 Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VnetAddonDataPlanePublicEndpoint
+Indicates whether the data plane components(log stream, app connect, remote debugging) in vnet injection instance could be accessed from internet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 

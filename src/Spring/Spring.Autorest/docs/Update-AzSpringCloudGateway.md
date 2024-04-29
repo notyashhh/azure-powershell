@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-AzSpringCloudGateway
 
 ## SYNOPSIS
-Create the default Spring Cloud Gateway or update the existing Spring Cloud Gateway.
+Update the default Spring Cloud Gateway or Update the existing Spring Cloud Gateway.
 
 ## SYNTAX
 
@@ -17,26 +17,32 @@ Create the default Spring Cloud Gateway or update the existing Spring Cloud Gate
 Update-AzSpringCloudGateway -Name <String> -ResourceGroupName <String> -ServiceName <String>
  [-SubscriptionId <String>] [-ApiMetadataPropertyDescription <String>]
  [-ApiMetadataPropertyDocumentation <String>] [-ApiMetadataPropertyServerUrl <String>]
- [-ApiMetadataPropertyTitle <String>] [-ApiMetadataPropertyVersion <String>] [-CorPropertyAllowCredentials]
- [-CorPropertyAllowedHeader <String[]>] [-CorPropertyAllowedMethod <String[]>]
- [-CorPropertyAllowedOrigin <String[]>] [-CorPropertyExposedHeader <String[]>] [-CorPropertyMaxAge <Int32>]
- [-HttpsOnly] [-Public] [-ResourceRequestsCpu <String>] [-ResourceRequestsMemory <String>]
- [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>] [-SsoPropertyClientId <String>]
- [-SsoPropertyClientSecret <String>] [-SsoPropertyIssuerUri <String>] [-SsoPropertyScope <String[]>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ApiMetadataPropertyTitle <String>] [-ApiMetadataPropertyVersion <String>] [-Apm <IApmReference[]>]
+ [-ClientAuthCertificate <String[]>] [-ClientAuthCertificateVerification <String>]
+ [-CorPropertyAllowCredentials] [-CorPropertyAllowedHeader <String[]>] [-CorPropertyAllowedMethod <String[]>]
+ [-CorPropertyAllowedOrigin <String[]>] [-CorPropertyAllowedOriginPattern <String[]>]
+ [-CorPropertyExposedHeader <String[]>] [-CorPropertyMaxAge <Int32>]
+ [-EnvironmentVariableProperty <Hashtable>] [-EnvironmentVariableSecret <Hashtable>] [-HttpsOnly] [-Public]
+ [-ResourceRequestsCpu <String>] [-ResourceRequestsMemory <String>] [-SkuCapacity <Int32>] [-SkuName <String>]
+ [-SkuTier <String>] [-SsoPropertyClientId <String>] [-SsoPropertyClientSecret <String>]
+ [-SsoPropertyIssuerUri <String>] [-SsoPropertyScope <String[]>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzSpringCloudGateway -InputObject <ISpringAppsIdentity> [-ApiMetadataPropertyDescription <String>]
  [-ApiMetadataPropertyDocumentation <String>] [-ApiMetadataPropertyServerUrl <String>]
- [-ApiMetadataPropertyTitle <String>] [-ApiMetadataPropertyVersion <String>] [-CorPropertyAllowCredentials]
- [-CorPropertyAllowedHeader <String[]>] [-CorPropertyAllowedMethod <String[]>]
- [-CorPropertyAllowedOrigin <String[]>] [-CorPropertyExposedHeader <String[]>] [-CorPropertyMaxAge <Int32>]
- [-HttpsOnly] [-Public] [-ResourceRequestsCpu <String>] [-ResourceRequestsMemory <String>]
- [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>] [-SsoPropertyClientId <String>]
- [-SsoPropertyClientSecret <String>] [-SsoPropertyIssuerUri <String>] [-SsoPropertyScope <String[]>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ApiMetadataPropertyTitle <String>] [-ApiMetadataPropertyVersion <String>] [-Apm <IApmReference[]>]
+ [-ClientAuthCertificate <String[]>] [-ClientAuthCertificateVerification <String>]
+ [-CorPropertyAllowCredentials] [-CorPropertyAllowedHeader <String[]>] [-CorPropertyAllowedMethod <String[]>]
+ [-CorPropertyAllowedOrigin <String[]>] [-CorPropertyAllowedOriginPattern <String[]>]
+ [-CorPropertyExposedHeader <String[]>] [-CorPropertyMaxAge <Int32>]
+ [-EnvironmentVariableProperty <Hashtable>] [-EnvironmentVariableSecret <Hashtable>] [-HttpsOnly] [-Public]
+ [-ResourceRequestsCpu <String>] [-ResourceRequestsMemory <String>] [-SkuCapacity <Int32>] [-SkuName <String>]
+ [-SkuTier <String>] [-SsoPropertyClientId <String>] [-SsoPropertyClientSecret <String>]
+ [-SsoPropertyIssuerUri <String>] [-SsoPropertyScope <String[]>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentitySpringExpanded
@@ -44,9 +50,12 @@ Update-AzSpringCloudGateway -InputObject <ISpringAppsIdentity> [-ApiMetadataProp
 Update-AzSpringCloudGateway -Name <String> -SpringInputObject <ISpringAppsIdentity>
  [-ApiMetadataPropertyDescription <String>] [-ApiMetadataPropertyDocumentation <String>]
  [-ApiMetadataPropertyServerUrl <String>] [-ApiMetadataPropertyTitle <String>]
- [-ApiMetadataPropertyVersion <String>] [-CorPropertyAllowCredentials] [-CorPropertyAllowedHeader <String[]>]
- [-CorPropertyAllowedMethod <String[]>] [-CorPropertyAllowedOrigin <String[]>]
- [-CorPropertyExposedHeader <String[]>] [-CorPropertyMaxAge <Int32>] [-HttpsOnly] [-Public]
+ [-ApiMetadataPropertyVersion <String>] [-Apm <IApmReference[]>] [-ClientAuthCertificate <String[]>]
+ [-ClientAuthCertificateVerification <String>] [-CorPropertyAllowCredentials]
+ [-CorPropertyAllowedHeader <String[]>] [-CorPropertyAllowedMethod <String[]>]
+ [-CorPropertyAllowedOrigin <String[]>] [-CorPropertyAllowedOriginPattern <String[]>]
+ [-CorPropertyExposedHeader <String[]>] [-CorPropertyMaxAge <Int32>]
+ [-EnvironmentVariableProperty <Hashtable>] [-EnvironmentVariableSecret <Hashtable>] [-HttpsOnly] [-Public]
  [-ResourceRequestsCpu <String>] [-ResourceRequestsMemory <String>] [-SkuCapacity <Int32>] [-SkuName <String>]
  [-SkuTier <String>] [-SsoPropertyClientId <String>] [-SsoPropertyClientSecret <String>]
  [-SsoPropertyIssuerUri <String>] [-SsoPropertyScope <String[]>] [-DefaultProfile <PSObject>] [-AsJob]
@@ -54,7 +63,7 @@ Update-AzSpringCloudGateway -Name <String> -SpringInputObject <ISpringAppsIdenti
 ```
 
 ## DESCRIPTION
-Create the default Spring Cloud Gateway or update the existing Spring Cloud Gateway.
+Update the default Spring Cloud Gateway or Update the existing Spring Cloud Gateway.
 
 ## EXAMPLES
 
@@ -157,11 +166,56 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Apm
+Collection of ApmReferences in service level
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IApmReference[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AsJob
 Run the command as a job
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ClientAuthCertificate
+Collection of certificate resource Ids in Azure Spring Apps.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ClientAuthCertificateVerification
+Whether to enable certificate verification or not
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -237,6 +291,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CorPropertyAllowedOriginPattern
+Allowed origin patterns to make cross-site requests.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CorPropertyExposedHeader
 HTTP response headers to expose for cross-site requests.
 
@@ -283,6 +352,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EnvironmentVariableProperty
+Non-sensitive properties
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnvironmentVariableSecret
+Sensitive properties
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -HttpsOnly
 Indicate if only https is allowed.
 
@@ -300,7 +399,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -467,7 +565,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

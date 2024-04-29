@@ -8,49 +8,81 @@ schema: 2.0.0
 # Update-AzSpringApiPortal
 
 ## SYNOPSIS
-Create the default API portal or update the existing API portal.
+Update the default API portal or Update the existing API portal.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-AzSpringApiPortal -Name <String> -ResourceGroupName <String> -ServiceName <String>
- [-SubscriptionId <String>] [-GatewayId <String[]>] [-HttpsOnly] [-Public] [-SkuCapacity <Int32>]
- [-SkuName <String>] [-SkuTier <String>] [-SourceUrl <String[]>] [-SsoPropertyClientId <String>]
- [-SsoPropertyClientSecret <String>] [-SsoPropertyIssuerUri <String>] [-SsoPropertyScope <String[]>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-AzSpringApiPortal -InputObject <ISpringAppsIdentity> [-GatewayId <String[]>] [-HttpsOnly] [-Public]
+ [-SubscriptionId <String>] [-ApiTryOutEnabledState <String>] [-GatewayId <String[]>] [-HttpsOnly] [-Public]
  [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>] [-SourceUrl <String[]>]
  [-SsoPropertyClientId <String>] [-SsoPropertyClientSecret <String>] [-SsoPropertyIssuerUri <String>]
  [-SsoPropertyScope <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
+### UpdateViaIdentityExpanded
+```
+Update-AzSpringApiPortal -InputObject <ISpringAppsIdentity> [-ApiTryOutEnabledState <String>]
+ [-GatewayId <String[]>] [-HttpsOnly] [-Public] [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>]
+ [-SourceUrl <String[]>] [-SsoPropertyClientId <String>] [-SsoPropertyClientSecret <String>]
+ [-SsoPropertyIssuerUri <String>] [-SsoPropertyScope <String[]>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ### UpdateViaIdentitySpringExpanded
 ```
-Update-AzSpringApiPortal -Name <String> -SpringInputObject <ISpringAppsIdentity> [-GatewayId <String[]>]
- [-HttpsOnly] [-Public] [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>] [-SourceUrl <String[]>]
- [-SsoPropertyClientId <String>] [-SsoPropertyClientSecret <String>] [-SsoPropertyIssuerUri <String>]
- [-SsoPropertyScope <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-AzSpringApiPortal -Name <String> -SpringInputObject <ISpringAppsIdentity>
+ [-ApiTryOutEnabledState <String>] [-GatewayId <String[]>] [-HttpsOnly] [-Public] [-SkuCapacity <Int32>]
+ [-SkuName <String>] [-SkuTier <String>] [-SourceUrl <String[]>] [-SsoPropertyClientId <String>]
+ [-SsoPropertyClientSecret <String>] [-SsoPropertyIssuerUri <String>] [-SsoPropertyScope <String[]>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create the default API portal or update the existing API portal.
+Update the default API portal or Update the existing API portal.
 
 ## EXAMPLES
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
+Update-AzSpringApiPortal -ResourceGroupName azps_test_group_spring -ServiceName azps-spring-01 -Name default -GatewayId $gatewayObj.Id -Public:$true -SkuName "E0" -SkuCapacity 2 -SkuTier "Enterprise"
 ```
 
 ```output
-{{ Add output here (remove the output block if the example doesn't have an output) }}
+GatewayId                    : {}
+HttpsOnly                    : False
+Id                           : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/azps_test_group_spring/providers/Microsoft.AppPlatform/Spring/azps-spring-01/apiPortals/default
+Instance                     : {{
+                                 "name": "asc-api-portal-default-c9c6dc6cf-6tbln",
+                                 "status": "Running"
+                               }, {
+                                 "name": "asc-api-portal-default-c9c6dc6cf-d6rpg",
+                                 "status": "Running"
+                               }}
+Name                         : default
+ProvisioningState            : Succeeded
+Public                       : True
+ResourceGroupName            : azps_test_group_spring
+ResourceRequestCpu           : 500m
+ResourceRequestMemory        : 1Gi
+SkuCapacity                  : 2
+SkuName                      : E0
+SkuTier                      : Enterprise
+SourceUrl                    :
+SsoPropertyClientId          :
+SsoPropertyClientSecret      :
+SsoPropertyIssuerUri         :
+SsoPropertyScope             :
+SystemDataCreatedAt          : 2023-12-15 上午 02:47:55
+SystemDataCreatedBy          : v-jinpel@microsoft.com
+SystemDataCreatedByType      : User
+SystemDataLastModifiedAt     : 2024-01-04 上午 09:02:21
+SystemDataLastModifiedBy     : v-jinpel@microsoft.com
+SystemDataLastModifiedByType : User
+Type                         : Microsoft.AppPlatform/Spring/apiPortals
+Url                          : azps-spring-01-apiportal-7fc53.svc.azuremicroservices.io
 ```
 
 {{ Add description here }}
@@ -67,6 +99,23 @@ Create the default API portal or update the existing API portal.
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -ApiTryOutEnabledState
+Indicates whether the API try-out feature is enabled or disabled.
+When enabled, users can try out the API by sending requests and viewing responses in API portal.
+When disabled, users cannot try out the API.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AsJob
 Run the command as a job
@@ -131,7 +180,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -283,7 +331,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

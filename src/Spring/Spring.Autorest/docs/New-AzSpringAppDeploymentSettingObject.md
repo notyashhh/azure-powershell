@@ -14,7 +14,7 @@ Create an in-memory object for DeploymentSettings.
 
 ```
 New-AzSpringAppDeploymentSettingObject [-AddonConfig <IDeploymentSettingsAddonConfigs>]
- [-ContainerProbeSettingDisableProbe <Boolean>]
+ [-Apm <IApmReference[]>] [-ContainerProbeSettingDisableProbe <Boolean>]
  [-EnvironmentVariable <IDeploymentSettingsEnvironmentVariables>] [-LivenessProbeActionType <String>]
  [-LivenessProbeDisableProbe <Boolean>] [-LivenessProbeFailureThreshold <Int32>]
  [-LivenessProbeInitialDelaySecond <Int32>] [-LivenessProbePeriodSecond <Int32>]
@@ -85,10 +85,24 @@ Create an in-memory object for DeploymentSettings.
 
 ### -AddonConfig
 Collection of addons.
-To construct, see NOTES section for ADDONCONFIG properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IDeploymentSettingsAddonConfigs
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Apm
+Collection of ApmReferences.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IApmReference[]
 Parameter Sets: (All)
 Aliases:
 
@@ -116,7 +130,6 @@ Accept wildcard characters: False
 
 ### -EnvironmentVariable
 Collection of environment variables.
-To construct, see NOTES section for ENVIRONMENTVARIABLE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IDeploymentSettingsEnvironmentVariables

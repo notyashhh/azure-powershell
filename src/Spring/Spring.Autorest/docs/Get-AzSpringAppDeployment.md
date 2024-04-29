@@ -15,7 +15,7 @@ Get a Deployment and its properties.
 ### List1 (Default)
 ```
 Get-AzSpringAppDeployment -ResourceGroupName <String> -ServiceName <String> [-SubscriptionId <String[]>]
- [-Version <List<String>>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+ [-Expand <String>] [-Version <List<String>>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### Get
@@ -78,7 +78,6 @@ Get a Deployment and its properties.
 
 ### -AppInputObject
 Identity Parameter
-To construct, see NOTES section for APPINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -123,9 +122,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Expand
+The expand expression to apply on the operation.
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -187,7 +200,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -221,7 +233,7 @@ Accept wildcard characters: False
 Version of the deployments to be listed
 
 ```yaml
-Type: System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+Type: System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 Parameter Sets: List, List1
 Aliases:
 

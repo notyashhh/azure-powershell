@@ -14,8 +14,9 @@ Create an in-memory object for CustomPersistentDiskResource.
 
 ```
 New-AzSpringCustomPersistentDiskResourceObject -StorageId <String>
- [-CustomPersistentDiskPropertyMountOption <String[]>] [-CustomPersistentDiskPropertyMountPath <String>]
- [-CustomPersistentDiskPropertyReadOnly <Boolean>] [<CommonParameters>]
+ [-CustomPersistentDiskPropertyEnableSubPath <Boolean>] [-CustomPersistentDiskPropertyMountOption <String[]>]
+ [-CustomPersistentDiskPropertyMountPath <String>] [-CustomPersistentDiskPropertyReadOnly <Boolean>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,6 +47,21 @@ Create an in-memory object for CustomPersistentDiskResource.
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -CustomPersistentDiskPropertyEnableSubPath
+If set to true, it will create and mount a dedicated directory for every individual app instance.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -CustomPersistentDiskPropertyMountOption
 These are the mount options for a persistent disk.

@@ -1,10 +1,48 @@
 {
   "resourceType": "Spring",
-  "apiVersion": "2022-12-01",
+  "apiVersion": "2023-12-01",
   "learnMore": {
     "url": "https://learn.microsoft.com/powershell/module/az.springapps"
   },
   "commands": [
+    {
+      "name": "Clear-AzSpringServiceVnetDnsSetting",
+      "description": "Flush Virtual Network DNS settings for a VNET injected Service.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppPlatform/Spring/{serviceName}/flushVirtualNetworkDnsSettings",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.springapps/clear-azspringservicevnetdnssetting"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-ResourceGroupName <String>",
+              "-ServiceName <String>",
+              "[-SubscriptionId <String>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Flush Virtual Network DNS settings for a VNET injected Service.",
+          "parameters": [
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-ServiceName",
+              "value": "[Path.serviceName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    },
     {
       "name": "Disable-AzSpringTestEndpoint",
       "description": "Disable test endpoint functionality for a Service.",

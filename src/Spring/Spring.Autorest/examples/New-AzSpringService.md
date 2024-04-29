@@ -1,4 +1,4 @@
-### Example 1: Create a new Service or update an exiting Service.
+### Example 1: Create a new Service or Create an exiting Service.
 ```powershell
 New-AzSpringService -ResourceGroupName azps_test_group_spring -Name azps-spring-01 -Location eastus -SkuTier "Enterprise" -SkuName "E0"
 ```
@@ -8,6 +8,9 @@ Fqdn                                             : azps-spring-01.azuremicroserv
 Id                                               : /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/azps_test_group_spring/providers/Microsoft.AppPlatform/Spring/azps-spring-01
 IngressConfigReadTimeoutInSecond                 :
 Location                                         : eastus
+MarketplaceResourcePlan                          : asa-ent-hr-mtr
+MarketplaceResourceProduct                       : azure-spring-cloud-vmware-tanzu-2
+MarketplaceResourcePublisher                     : vmware-inc
 Name                                             : azps-spring-01
 NetworkProfileAppNetworkResourceGroup            :
 NetworkProfileAppSubnetId                        :
@@ -16,31 +19,32 @@ NetworkProfileRequiredTraffic                    :
 NetworkProfileServiceCidr                        :
 NetworkProfileServiceRuntimeNetworkResourceGroup :
 NetworkProfileServiceRuntimeSubnetId             :
-OutboundIPPublicIP                               : {4.255.75.210, 4.255.75.214}
+OutboundIPPublicIP                               : {20.253.92.83, 20.253.92.97}
 PowerState                                       : Running
 ProvisioningState                                : Succeeded
 ResourceGroupName                                : azps_test_group_spring
-ServiceId                                        : 0c6aeadde5dd43cfa31ee4e078381260
+ServiceId                                        : 0871555f28044a46bdc0f31682b862ef
 SkuCapacity                                      :
 SkuName                                          : E0
 SkuTier                                          : Enterprise
-SystemDataCreatedAt                              : 2023-12-13 上午 08:24:54
+SystemDataCreatedAt                              : 2024-04-24 上午 05:49:39
 SystemDataCreatedBy                              : v-jinpel@microsoft.com
 SystemDataCreatedByType                          : User
-SystemDataLastModifiedAt                         : 2023-12-13 上午 08:24:54
+SystemDataLastModifiedAt                         : 2024-04-24 上午 05:49:39
 SystemDataLastModifiedBy                         : v-jinpel@microsoft.com
 SystemDataLastModifiedByType                     : User
 Tag                                              : {
                                                    }
 Type                                             : Microsoft.AppPlatform/Spring
 Version                                          : 3
+VnetAddonDataPlanePublicEndpoint                 :
 VnetAddonLogStreamPublicEndpoint                 :
 ZoneRedundant                                    : False
 ```
 
-Create a new Service or update an exiting Service.
+Create a new Service or Create an exiting Service.
 
-### Example 2: Create a new Service or update an exiting Service.
+### Example 2: Create a new Service or Create an exiting Service.
 ```powershell
 New-AzSpringService -ResourceGroupName azps_test_group_spring -Name azps-spring-02 -Location eastus
 ```
@@ -80,4 +84,4 @@ VnetAddonLogStreamPublicEndpoint                 :
 ZoneRedundant                                    : False
 ```
 
-Create a new Service or update an exiting Service.
+Create a new Service or Create an exiting Service.

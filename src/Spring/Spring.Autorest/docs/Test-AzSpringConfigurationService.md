@@ -129,7 +129,6 @@ Accept wildcard characters: False
 
 ### -GitRepository
 Repositories of Application Configuration Service git property.
-To construct, see NOTES section for GITREPOSITORY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IConfigurationServiceGitRepository[]
@@ -145,7 +144,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -237,7 +235,6 @@ Accept wildcard characters: False
 
 ### -Setting
 The settings of Application Configuration Service.
-To construct, see NOTES section for SETTING properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IConfigurationServiceSettings
@@ -253,7 +250,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

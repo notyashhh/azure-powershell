@@ -8,33 +8,33 @@ schema: 2.0.0
 # Update-AzSpringConfigurationService
 
 ## SYNOPSIS
-Create the default Application Configuration Service or update the existing Application Configuration Service.
+Update the default Application Configuration Service or Update the existing Application Configuration Service.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-AzSpringConfigurationService -ResourceGroupName <String> -ServiceName <String>
- [-SubscriptionId <String>] [-GitRepository <IConfigurationServiceGitRepository[]>]
+ [-SubscriptionId <String>] [-Generation <String>] [-GitRepository <IConfigurationServiceGitRepository[]>]
  [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzSpringConfigurationService -InputObject <ISpringAppsIdentity>
+Update-AzSpringConfigurationService -InputObject <ISpringAppsIdentity> [-Generation <String>]
  [-GitRepository <IConfigurationServiceGitRepository[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentitySpringExpanded
 ```
-Update-AzSpringConfigurationService -SpringInputObject <ISpringAppsIdentity>
+Update-AzSpringConfigurationService -SpringInputObject <ISpringAppsIdentity> [-Generation <String>]
  [-GitRepository <IConfigurationServiceGitRepository[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create the default Application Configuration Service or update the existing Application Configuration Service.
+Update the default Application Configuration Service or Update the existing Application Configuration Service.
 
 ## EXAMPLES
 
@@ -93,9 +93,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Generation
+The generation of the Application Configuration Service.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GitRepository
 Repositories of Application Configuration Service git property.
-To construct, see NOTES section for GITREPOSITORY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IConfigurationServiceGitRepository[]
@@ -111,7 +125,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -173,7 +186,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity

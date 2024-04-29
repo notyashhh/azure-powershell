@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-AzSpringCloudGatewayRouteConfig
 
 ## SYNOPSIS
-Create the default Spring Cloud Gateway route configs or update the existing Spring Cloud Gateway route configs.
+Update the default Spring Cloud Gateway route configs or Update the existing Spring Cloud Gateway route configs.
 
 ## SYNTAX
 
@@ -16,34 +16,37 @@ Create the default Spring Cloud Gateway route configs or update the existing Spr
 ```
 Update-AzSpringCloudGatewayRouteConfig -GatewayName <String> -ResourceGroupName <String>
  -RouteConfigName <String> -ServiceName <String> [-SubscriptionId <String>] [-AppResourceId <String>]
- [-OpenApiUri <String>] [-Protocol <String>] [-Route <IGatewayApiRoute[]>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Filter <String[]>] [-OpenApiUri <String>] [-Predicate <String[]>] [-Protocol <String>]
+ [-Route <IGatewayApiRoute[]>] [-SsoEnabled] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzSpringCloudGatewayRouteConfig -InputObject <ISpringAppsIdentity> [-AppResourceId <String>]
- [-OpenApiUri <String>] [-Protocol <String>] [-Route <IGatewayApiRoute[]>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Filter <String[]>] [-OpenApiUri <String>] [-Predicate <String[]>] [-Protocol <String>]
+ [-Route <IGatewayApiRoute[]>] [-SsoEnabled] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityGatewayExpanded
 ```
 Update-AzSpringCloudGatewayRouteConfig -GatewayInputObject <ISpringAppsIdentity> -RouteConfigName <String>
- [-AppResourceId <String>] [-OpenApiUri <String>] [-Protocol <String>] [-Route <IGatewayApiRoute[]>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppResourceId <String>] [-Filter <String[]>] [-OpenApiUri <String>] [-Predicate <String[]>]
+ [-Protocol <String>] [-Route <IGatewayApiRoute[]>] [-SsoEnabled] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentitySpringExpanded
 ```
 Update-AzSpringCloudGatewayRouteConfig -GatewayName <String> -RouteConfigName <String>
- -SpringInputObject <ISpringAppsIdentity> [-AppResourceId <String>] [-OpenApiUri <String>]
- [-Protocol <String>] [-Route <IGatewayApiRoute[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -SpringInputObject <ISpringAppsIdentity> [-AppResourceId <String>] [-Filter <String[]>]
+ [-OpenApiUri <String>] [-Predicate <String[]>] [-Protocol <String>] [-Route <IGatewayApiRoute[]>]
+ [-SsoEnabled] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create the default Spring Cloud Gateway route configs or update the existing Spring Cloud Gateway route configs.
+Update the default Spring Cloud Gateway route configs or Update the existing Spring Cloud Gateway route configs.
 
 ## EXAMPLES
 
@@ -117,9 +120,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Filter
+To modify the request before sending it to the target endpoint, or the received response in app level.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GatewayInputObject
 Identity Parameter
-To construct, see NOTES section for GATEWAYINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -150,7 +167,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -194,6 +210,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Predicate
+A number of conditions to evaluate a route for each request in app level.
+Each predicate may be evaluated against request headers and parameter values.
+All of the predicates associated with a route must evaluate to true for the route to be matched to the request.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Protocol
 Protocol of routed Azure Spring Apps applications.
 
@@ -227,7 +260,6 @@ Accept wildcard characters: False
 
 ### -Route
 Array of API routes, each route contains properties such as `title`, `uri`, `ssoEnabled`, `predicates`, `filters`.
-To construct, see NOTES section for ROUTE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IGatewayApiRoute[]
@@ -273,7 +305,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -284,6 +315,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -SsoEnabled
+Enable Single Sign-On in app level.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

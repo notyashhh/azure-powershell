@@ -3,9 +3,6 @@
 This directory contains the PowerShell module for the SpringApps service.
 
 ---
-## Status
-[![Az.SpringApps](https://img.shields.io/powershellgallery/v/Az.SpringApps.svg?style=flat-square&label=Az.SpringApps "Az.SpringApps")](https://www.powershellgallery.com/packages/Az.SpringApps/)
-
 ## Info
 - Modifiable: yes
 - Generated: all
@@ -47,11 +44,11 @@ In this directory, run AutoRest:
 > see https://aka.ms/autorest
 
 ``` yaml
-commit: 0b6eab579426b030aa84996b9c1b35ce137a7f9f
+commit: ab93e3a3daf9873ded21ab6112b48fbed14fb62e
 require:
   - $(this-folder)/../../readme.azure.noprofile.md
 input-file:
-  - $(repo)/specification/appplatform/resource-manager/Microsoft.AppPlatform/stable/2022-12-01/appplatform.json
+  - $(repo)/specification/appplatform/resource-manager/Microsoft.AppPlatform/stable/2023-12-01/appplatform.json
     
 title: SpringApps
 module-version: 0.1.0
@@ -523,10 +520,16 @@ directive:
   - no-inline:
     - UserSourceInfo
     - CertificateProperties
+    - StorageProperties
+    - ContainerRegistryCredentials
 
   # Modifications were made to the command
   - model-cmdlet:
     - model-name: CustomPersistentDiskResource
+    - model-name: ContainerRegistryBasicCredentials
+      cmdlet-name: New-AzSpringContainerRegistryCredentialObject
+    - model-name: StorageAccount
+      cmdlet-name: New-AzSpringStorageTypeObject
     - model-name: GatewayApiRoute
       cmdlet-name: New-AzSpringCloudGatewayApiRouteObject
     - model-name: ConfigurationServiceGitRepository

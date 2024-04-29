@@ -1,4 +1,4 @@
-### Example 1: Create the default Service Registry or update the existing Service Registry.
+### Example 1: Create the default Service Registry or Create the existing Service Registry.
 ```powershell
 New-AzSpringServiceRegistry -ResourceGroupName azps_test_group_spring -ServiceName azps-spring-01
 ```
@@ -18,13 +18,13 @@ ResourceGroupName            : azps_test_group_spring
 ResourceRequestCpu           : 500m
 ResourceRequestInstanceCount : 2
 ResourceRequestMemory        : 1Gi
-SystemDataCreatedAt          : 2023-12-19 上午 09:42:49
+SystemDataCreatedAt          : 2024-04-25 上午 06:43:33
 SystemDataCreatedBy          : v-jinpel@microsoft.com
 SystemDataCreatedByType      : User
-SystemDataLastModifiedAt     : 2023-12-19 上午 09:42:49
+SystemDataLastModifiedAt     : 2024-04-25 上午 06:43:33
 SystemDataLastModifiedBy     : v-jinpel@microsoft.com
 SystemDataLastModifiedByType : User
 Type                         : Microsoft.AppPlatform/Spring/serviceRegistries
 ```
 
-Create the default Service Registry or update the existing Service Registry.
+Create the default Service Registry or Create the existing Service Registry.

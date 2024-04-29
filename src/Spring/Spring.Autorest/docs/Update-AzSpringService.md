@@ -8,24 +8,27 @@ schema: 2.0.0
 # Update-AzSpringService
 
 ## SYNOPSIS
-Operation to update an exiting Service.
+Operation to Update an exiting Service.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-AzSpringService -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-IngressConfigReadTimeoutInSecond <Int32>] [-Location <String>] [-SkuCapacity <Int32>] [-SkuName <String>]
- [-SkuTier <String>] [-Tag <Hashtable>] [-VnetAddonLogStreamPublicEndpoint] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IngressConfigReadTimeoutInSecond <Int32>] [-Location <String>] [-MarketplaceResourcePlan <String>]
+ [-MarketplaceResourceProduct <String>] [-MarketplaceResourcePublisher <String>] [-SkuCapacity <Int32>]
+ [-SkuName <String>] [-SkuTier <String>] [-Tag <Hashtable>] [-VnetAddonDataPlanePublicEndpoint]
+ [-VnetAddonLogStreamPublicEndpoint] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzSpringService -InputObject <ISpringAppsIdentity> [-IngressConfigReadTimeoutInSecond <Int32>]
- [-Location <String>] [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>] [-Tag <Hashtable>]
- [-VnetAddonLogStreamPublicEndpoint] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Location <String>] [-MarketplaceResourcePlan <String>] [-MarketplaceResourceProduct <String>]
+ [-MarketplaceResourcePublisher <String>] [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>]
+ [-Tag <Hashtable>] [-VnetAddonDataPlanePublicEndpoint] [-VnetAddonLogStreamPublicEndpoint]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaJsonFilePath
@@ -43,7 +46,7 @@ Update-AzSpringService -Name <String> -ResourceGroupName <String> -JsonString <S
 ```
 
 ## DESCRIPTION
-Operation to update an exiting Service.
+Operation to Update an exiting Service.
 
 ## EXAMPLES
 
@@ -119,7 +122,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -165,6 +167,51 @@ Accept wildcard characters: False
 
 ### -Location
 The GEO location of the resource.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MarketplaceResourcePlan
+The plan id of the 3rd Party Artifact that is being procured.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MarketplaceResourceProduct
+The 3rd Party artifact that is being procured.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MarketplaceResourcePublisher
+The publisher id of the 3rd Party Artifact that is being bought.
 
 ```yaml
 Type: System.String
@@ -290,6 +337,21 @@ Tags of the service which is a list of key value pairs that describe the resourc
 
 ```yaml
 Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VnetAddonDataPlanePublicEndpoint
+Indicates whether the data plane components(log stream, app connect, remote debugging) in vnet injection instance could be accessed from internet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 

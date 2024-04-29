@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-AzSpringApp
 
 ## SYNOPSIS
-Operation to update an exiting App.
+Operation to Update an exiting App.
 
 ## SYNTAX
 
@@ -18,13 +18,13 @@ Update-AzSpringApp -Name <String> -ResourceGroupName <String> -ServiceName <Stri
  [-AddonConfig <Hashtable>] [-ClientAuthCertificate <String[]>]
  [-CustomPersistentDisk <ICustomPersistentDiskResource[]>] [-EnableEndToEndTl] [-HttpsOnly]
  [-IdentityPrincipalId <String>] [-IdentityTenantId <String>] [-IdentityType <String>]
- [-IdentityUserAssignedIdentity <Hashtable>] [-IngressSettingBackendProtocol <String>]
- [-IngressSettingReadTimeoutInSecond <Int32>] [-IngressSettingSendTimeoutInSecond <Int32>]
- [-IngressSettingSessionAffinity <String>] [-IngressSettingSessionCookieMaxAge <Int32>]
- [-LoadedCertificate <ILoadedCertificate[]>] [-Location <String>] [-PersistentDiskMountPath <String>]
- [-PersistentDiskSizeInGb <Int32>] [-Public] [-TemporaryDiskMountPath <String>]
- [-TemporaryDiskSizeInGb <Int32>] [-VnetAddonPublicEndpoint] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IngressSettingBackendProtocol <String>] [-IngressSettingReadTimeoutInSecond <Int32>]
+ [-IngressSettingSendTimeoutInSecond <Int32>] [-IngressSettingSessionAffinity <String>]
+ [-IngressSettingSessionCookieMaxAge <Int32>] [-LoadedCertificate <ILoadedCertificate[]>] [-Location <String>]
+ [-PersistentDiskMountPath <String>] [-PersistentDiskSizeInGb <Int32>] [-Public]
+ [-TemporaryDiskMountPath <String>] [-TemporaryDiskSizeInGb <Int32>] [-UserAssignedIdentity <String[]>]
+ [-VnetAddonPublicEndpoint] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -32,12 +32,12 @@ Update-AzSpringApp -Name <String> -ResourceGroupName <String> -ServiceName <Stri
 Update-AzSpringApp -InputObject <ISpringAppsIdentity> [-AddonConfig <Hashtable>]
  [-ClientAuthCertificate <String[]>] [-CustomPersistentDisk <ICustomPersistentDiskResource[]>]
  [-EnableEndToEndTl] [-HttpsOnly] [-IdentityPrincipalId <String>] [-IdentityTenantId <String>]
- [-IdentityType <String>] [-IdentityUserAssignedIdentity <Hashtable>]
- [-IngressSettingBackendProtocol <String>] [-IngressSettingReadTimeoutInSecond <Int32>]
- [-IngressSettingSendTimeoutInSecond <Int32>] [-IngressSettingSessionAffinity <String>]
- [-IngressSettingSessionCookieMaxAge <Int32>] [-LoadedCertificate <ILoadedCertificate[]>] [-Location <String>]
- [-PersistentDiskMountPath <String>] [-PersistentDiskSizeInGb <Int32>] [-Public]
- [-TemporaryDiskMountPath <String>] [-TemporaryDiskSizeInGb <Int32>] [-VnetAddonPublicEndpoint]
+ [-IdentityType <String>] [-IngressSettingBackendProtocol <String>]
+ [-IngressSettingReadTimeoutInSecond <Int32>] [-IngressSettingSendTimeoutInSecond <Int32>]
+ [-IngressSettingSessionAffinity <String>] [-IngressSettingSessionCookieMaxAge <Int32>]
+ [-LoadedCertificate <ILoadedCertificate[]>] [-Location <String>] [-PersistentDiskMountPath <String>]
+ [-PersistentDiskSizeInGb <Int32>] [-Public] [-TemporaryDiskMountPath <String>]
+ [-TemporaryDiskSizeInGb <Int32>] [-UserAssignedIdentity <String[]>] [-VnetAddonPublicEndpoint]
  [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -46,12 +46,12 @@ Update-AzSpringApp -InputObject <ISpringAppsIdentity> [-AddonConfig <Hashtable>]
 Update-AzSpringApp -Name <String> -SpringInputObject <ISpringAppsIdentity> [-AddonConfig <Hashtable>]
  [-ClientAuthCertificate <String[]>] [-CustomPersistentDisk <ICustomPersistentDiskResource[]>]
  [-EnableEndToEndTl] [-HttpsOnly] [-IdentityPrincipalId <String>] [-IdentityTenantId <String>]
- [-IdentityType <String>] [-IdentityUserAssignedIdentity <Hashtable>]
- [-IngressSettingBackendProtocol <String>] [-IngressSettingReadTimeoutInSecond <Int32>]
- [-IngressSettingSendTimeoutInSecond <Int32>] [-IngressSettingSessionAffinity <String>]
- [-IngressSettingSessionCookieMaxAge <Int32>] [-LoadedCertificate <ILoadedCertificate[]>] [-Location <String>]
- [-PersistentDiskMountPath <String>] [-PersistentDiskSizeInGb <Int32>] [-Public]
- [-TemporaryDiskMountPath <String>] [-TemporaryDiskSizeInGb <Int32>] [-VnetAddonPublicEndpoint]
+ [-IdentityType <String>] [-IngressSettingBackendProtocol <String>]
+ [-IngressSettingReadTimeoutInSecond <Int32>] [-IngressSettingSendTimeoutInSecond <Int32>]
+ [-IngressSettingSessionAffinity <String>] [-IngressSettingSessionCookieMaxAge <Int32>]
+ [-LoadedCertificate <ILoadedCertificate[]>] [-Location <String>] [-PersistentDiskMountPath <String>]
+ [-PersistentDiskSizeInGb <Int32>] [-Public] [-TemporaryDiskMountPath <String>]
+ [-TemporaryDiskSizeInGb <Int32>] [-UserAssignedIdentity <String[]>] [-VnetAddonPublicEndpoint]
  [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -70,7 +70,7 @@ Update-AzSpringApp -Name <String> -ResourceGroupName <String> -ServiceName <Stri
 ```
 
 ## DESCRIPTION
-Operation to update an exiting App.
+Operation to Update an exiting App.
 
 ## EXAMPLES
 
@@ -145,7 +145,6 @@ Accept wildcard characters: False
 
 ### -CustomPersistentDisk
 List of custom persistent disks
-To construct, see NOTES section for CUSTOMPERSISTENTDISK properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ICustomPersistentDiskResource[]
@@ -250,21 +249,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IdentityUserAssignedIdentity
-Properties of user-assigned managed identities
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded, UpdateViaIdentitySpringExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -IngressSettingBackendProtocol
 How ingress should communicate with this app backend service.
 
@@ -342,7 +326,6 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -388,7 +371,6 @@ Accept wildcard characters: False
 
 ### -LoadedCertificate
 Collection of loaded certificates
-To construct, see NOTES section for LOADEDCERTIFICATE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ILoadedCertificate[]
@@ -525,7 +507,6 @@ Accept wildcard characters: False
 
 ### -SpringInputObject
 Identity Parameter
-To construct, see NOTES section for SPRINGINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.ISpringAppsIdentity
@@ -575,6 +556,22 @@ Size of the temporary disk in GB
 
 ```yaml
 Type: System.Int32
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded, UpdateViaIdentitySpringExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserAssignedIdentity
+The array of user assigned identities associated with the resource.
+The elements in array will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}.'
+
+```yaml
+Type: System.String[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded, UpdateViaIdentitySpringExpanded
 Aliases:
 

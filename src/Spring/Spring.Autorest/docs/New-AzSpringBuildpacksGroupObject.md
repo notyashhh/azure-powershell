@@ -39,7 +39,6 @@ Create an in-memory object for BuildpacksGroupProperties.
 
 ### -Buildpack
 Buildpacks in the buildpack group.
-To construct, see NOTES section for BUILDPACK properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.SpringApps.Models.IBuildpackProperties[]

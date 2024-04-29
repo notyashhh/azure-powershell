@@ -14,8 +14,9 @@ Create an in-memory object for ConfigurationServiceGitRepository.
 
 ```
 New-AzSpringConfigurationServiceGitObject -Label <String> -Name <String> -Pattern <String[]> -Uri <String>
- [-HostKey <String>] [-HostKeyAlgorithm <String>] [-Password <String>] [-PrivateKey <String>]
- [-SearchPath <String[]>] [-StrictHostKeyChecking <Boolean>] [-Username <String>] [<CommonParameters>]
+ [-CaCertResourceId <String>] [-GitImplementation <String>] [-HostKey <String>] [-HostKeyAlgorithm <String>]
+ [-Password <String>] [-PrivateKey <String>] [-SearchPath <String[]>] [-StrictHostKeyChecking <Boolean>]
+ [-Username <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,6 +46,36 @@ Username              :
 Create an in-memory object for ConfigurationServiceGitRepository.
 
 ## PARAMETERS
+
+### -CaCertResourceId
+Resource Id of CA certificate for https URL of Git repository.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GitImplementation
+Git libraries used to support various repository providers.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -HostKey
 Public sshKey of git repository.
