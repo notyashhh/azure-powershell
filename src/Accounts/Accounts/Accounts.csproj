@@ -15,6 +15,7 @@
     <NetCore21Assemblies Include="$(RepoSrc)lib\netcoreapp2.1\*.dll" />
     <NetCore31Assemblies Include="$(RepoSrc)lib\netcoreapp3.1\*.dll" />
     <NetStandardAssemblies Include="$(RepoSrc)lib\netstandard2.0\*.dll" />
+    <Compile Remove="C:\Azure\upstream\azure-powershell\src\shared\TrackedConfigKeys.cs" />
     <StorageDependencies Include="$(RepoSrc)lib\WindowsAzure.Storage\9.3.0\Microsoft.WindowsAzure.Storage.dll" />
     <StorageDependencies Include="$(RepoSrc)lib\WindowsAzure.Storage\9.3.0\Microsoft.WindowsAzure.Storage.DataMovement.dll" />
   </ItemGroup>

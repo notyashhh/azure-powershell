@@ -22,6 +22,7 @@ using Microsoft.Azure.Commands.Common.Authentication.Factories;
 using Microsoft.Azure.Commands.Common.Authentication.Models;
 using Microsoft.Azure.Commands.Common.Authentication.ResourceManager.Common;
 using Microsoft.Azure.Commands.Common.Authentication.Sanitizer;
+using Microsoft.Azure.Commands.Common.Authentication.Utilities;
 using Microsoft.Azure.Commands.Profile.Common;
 using Microsoft.Azure.Commands.Profile.Models;
 using Microsoft.Azure.Commands.Profile.Models.Core;
@@ -598,9 +599,15 @@ namespace Microsoft.Azure.Commands.Profile
 
         private bool IsInteractiveContextSelectionEnabled()
         {
-            return AzureSession.Instance.TryGetComponent<IConfigManager>(nameof(IConfigManager), out IConfigManager configManager) ? configManager.GetConfigValue<LoginExperienceConfig>(ConfigKeys.LoginExperienceV2).Equals(LoginExperienceConfig.On) : true;
+            LogLoginExperienceValueInTelemetry();
+            return AzConfigReader.GetAzConfig(ConfigKeys.LoginExperienceV2, LoginExperienceConfig.On).Equals(LoginExperienceConfig.On);
         }
 
+        private void LogLoginExperienceValueInTelemetry()
+        {
+            _qosEvent.AzConfigInfo.Add(ConfigKeys.LoginExperienceV2, Enum.GetName(typeof(LoginExperienceConfig), AzConfigReader.GetAzConfig(ConfigKeys.LoginExperienceV2, LoginExperienceConfig.On)));
+        }
+            
         private bool IsInteractiveAuthenticationFlow()
         {
             return ParameterSetName.Equals(UserParameterSet);

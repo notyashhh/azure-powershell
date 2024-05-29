@@ -15,6 +15,7 @@
 using Azure.Identity;
 
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+using Microsoft.Azure.Commands.Common.Authentication.Config.Models;
 using Microsoft.Azure.Commands.Shared.Config;
 using Microsoft.Azure.PowerShell.Common.Config;
 
@@ -29,6 +30,11 @@ namespace Microsoft.Azure.Commands.Common.Authentication.Utilities
             {
                 return AzureSession.Instance;
             }
+        }
+
+        public static T GetAzConfig<T>(string key, T defaultValue = default(T))
+        {
+            return Session.TryGetComponent<IConfigManager>(nameof(IConfigManager), out IConfigManager configManager) ? configManager.GetConfigValue<T>(key) : defaultValue;
         }
 
         static public bool IsWamEnabled(string authority)
