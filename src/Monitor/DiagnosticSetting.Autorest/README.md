@@ -52,6 +52,7 @@ nested-object-to-string: true
 use-extension:
   "@autorest/powershell": "3.x"
 
+#Test-1
 directive:
   # Following is two common directive which are normally required in all the RPs
   # 1. Remove the unexpanded parameter set

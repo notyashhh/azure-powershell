@@ -49,7 +49,7 @@ nested-object-to-string: true
 use-extension:
   "@autorest/powershell": "3.x"
 
-#Test-1
+#Test-2
 directive:
 # Worked around this issue: https://github.com/Azure/autorest.powershell/issues/1258
   - from: EncryptionEntitiesDefinition.json.cs
