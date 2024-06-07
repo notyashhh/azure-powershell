@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 7.2.0
 * Fixed default formatting for output objects
 * Removed '-InputObject' for
     * `Get-AzPolicyAssignment`
