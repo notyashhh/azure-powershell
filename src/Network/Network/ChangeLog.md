@@ -19,6 +19,7 @@
 --->
 
 ## Upcoming Release
+* Onboarded `Microsoft.VideoIndexer/accounts` to private link cmdlets
 
 ## Version 7.6.0
 * Added cmdlet `New-AzVirtualApplianceNetworkProfile` to build network profile for network virtual appliance and pass as a parameter.
