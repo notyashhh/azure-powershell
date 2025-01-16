@@ -18,6 +18,7 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Removed "Microsoft.Azure.Management.Authorization" Version "2.13.0-preview" package reference
 
 ## Version 2.1.1
 * Updated dataset limit from 5 Tb to 100 Tib.

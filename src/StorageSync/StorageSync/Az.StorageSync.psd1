@@ -54,8 +54,9 @@ DotNetFrameworkVersion = '4.7.2'
 RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '2.15.0'; })
 
 # Assemblies that must be loaded prior to importing this module
-RequiredAssemblies = 'Microsoft.Azure.PowerShell.StorageSync.Sdk.dll', 
-               'System.CodeDom.dll', 'System.Management.dll'
+RequiredAssemblies = 'Microsoft.Azure.PowerShell.StorageSync.Management.Sdk.dll', 
+               'System.CodeDom.dll', 'System.Management.dll', 
+               'Microsoft.Azure.PowerShell.Cmdlets.StorageSync.Helpers.dll'
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 # ScriptsToProcess = @()
