@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Add warning message for upcoming breaking change on upload Azure file
+    - `Set-AzStorageFileContent`
 
 ## Version 7.0.0
 * Added a prompt that needs confirmation when upgrading a storage account from StorageV1 or BlobStorage to StorageV2. Can be suppressed with -Force.

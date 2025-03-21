@@ -36,6 +36,7 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
     using System.Threading.Tasks;
     using LocalConstants = Microsoft.WindowsAzure.Commands.Storage.File.Constants;
 
+    [CmdletOutputBreakingChangeWithVersion(typeof(AzureStorageFile), "14.0.0", "9.0.0", ChangeDescription = "The ContentHash properties will be removed from the uploaded Azure file when file size > 1TB, or upload with Oauth credencial, or with -DisAllowTrailingDot.")]
     [Cmdlet("Set", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageFileContent", SupportsShouldProcess = true, DefaultParameterSetName = LocalConstants.ShareNameParameterSetName), OutputType(typeof(AzureStorageFile))]
     public class SetAzureStorageFileContent : StorageFileDataManagementCmdletBase, IDynamicParameters
     {
