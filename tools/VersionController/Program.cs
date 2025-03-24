@@ -65,11 +65,25 @@ namespace VersionController
             var executingAssemblyPath = Assembly.GetExecutingAssembly().Location;
             var versionControllerDirectory = Directory.GetParent(executingAssemblyPath).FullName;
             var artifactsDirectory = Directory.GetParent(versionControllerDirectory).FullName;
+
+            Console.WriteLine($"VersionController Directory: {versionControllerDirectory}");
+            Console.WriteLine($"Artifacts Directory: {artifactsDirectory}");
+            Console.WriteLine($"Root Directory: {_rootDirectory}");
+            Console.WriteLine($"Release Type: {_releaseType}");
+            Console.WriteLine($"Generate Syntax Changelog: {_generateSyntaxChangelog}");
+            Console.WriteLine($"Assigned Version: {_assignedVersion}");
+            Console.WriteLine($"Minimal Version: {string.Join(", ", _minimalVersion.Select(kvp => $"{kvp.Key}: {kvp.Value}"))}");
+            
             _rootDirectory = Directory.GetParent(artifactsDirectory).FullName;
-            _projectDirectories = new List<string> { Path.Combine(_rootDirectory, @"src\") }.Where((d) => Directory.Exists(d)).ToList();
-            _outputDirectories = new List<string> { Path.Combine(_rootDirectory, @"artifacts\Release\") }.Where((d) => Directory.Exists(d)).ToList();
+            _projectDirectories = new List<string> { Path.Combine(_rootDirectory, @"src/") }.Where((d) => Directory.Exists(d)).ToList();
+            _outputDirectories = new List<string> { Path.Combine(_rootDirectory, @"artifacts/Release/") }.Where((d) => Directory.Exists(d)).ToList();
             _moduleNameFilter = string.Empty;
             _exceptionsDirectory  = Path.Combine(versionControllerDirectory, "Exceptions");
+
+            Console.WriteLine($"Exceptions Directory: {_exceptionsDirectory}");
+            Console.WriteLine($"Output Directories: {string.Join(", ", _outputDirectories)}");
+            Console.WriteLine($"Project Directories: {string.Join(", ", _projectDirectories)}");
+            Console.WriteLine($"Module Name Filter: {_moduleNameFilter}");
             SharedAssemblyLoader.Load(_outputDirectories.FirstOrDefault());
 
             if(null != args)
@@ -168,8 +182,29 @@ namespace VersionController
                 powershell.AddScript("Get-PSRepository");
                 var repositories = powershell.Invoke();
                 string psgallery = null;
+
+                Console.WriteLine("=====================================");
+                Console.WriteLine("PSRepository List:", repositories);
+                Console.WriteLine("=====================================");
+
+                // Print Error Stream
+                if (powershell.Streams.Error.Count > 0)
+                {
+                    foreach (var error in powershell.Streams.Error)
+                    {
+                        Console.WriteLine(error.ToString());
+                    }
+                }
+
                 foreach (var repo in repositories)
                 {
+                    Console.WriteLine("=====================================");
+                    Console.WriteLine(repo.Properties["Name"]?.Value);
+                    Console.WriteLine(repo.Properties["SourceLocation"]?.Value);
+                    Console.WriteLine(repo.Properties["InstallationPolicy"]?.Value);
+                    Console.WriteLine(repo.Properties["PackageManagementProvider"]?.Value);
+                    Console.WriteLine(repo.Properties["PublishLocation"]?.Value);
+                    Console.WriteLine("=====================================");
                     if ("https://www.powershellgallery.com/api/v2".Equals(repo.Properties["SourceLocation"]?.Value))
                     {
                         psgallery = repo.Properties["Name"]?.Value?.ToString();
@@ -225,7 +260,7 @@ namespace VersionController
                 }
 
                 // Clean MinimalVersion.csv
-                File.WriteAllLines(Path.Combine(_rootDirectory, @"tools\VersionController", "MinimalVersion.csv"), _minimalVersionContent.ToArray());
+                File.WriteAllLines(Path.Combine(_rootDirectory, @"tools/VersionController", "MinimalVersion.csv"), _minimalVersionContent.ToArray());
             }
 
             //Make Az.Accounts as the last module to calculate

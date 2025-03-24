@@ -167,7 +167,7 @@ function Update-Image-Releases
 
 function Get-ExistSerializedCmdletJsonFile
 {
-    return $(ls "$PSScriptRoot\Tools.Common\SerializedCmdlets").Name
+    return $(ls "$PSScriptRoot/Tools.Common/SerializedCmdlets").Name
 }
 
 function Bump-AzVersion
