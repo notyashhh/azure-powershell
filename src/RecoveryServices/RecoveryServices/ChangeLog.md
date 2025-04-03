@@ -18,6 +18,7 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+* Deprecated the `Token` parameter for cross-tenant authentication in MUA scenarios for handling breaking change in Get-AzAccessToken cmdlet, use parameter `SecureToken` going forward.
 
 ## Version 7.0.0
 * [Breaking Change] Renamed the property `ResouceType` of `ASRVaultSettings` to `ResourceType`. 

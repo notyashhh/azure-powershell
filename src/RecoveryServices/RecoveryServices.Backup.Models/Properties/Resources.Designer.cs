@@ -2753,5 +2753,126 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Properties {
                 return ResourceManager.GetString("CRRAccessTokenCouldNotBeFetchedException", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Switching the backup tier from vaulted backup to snapshot is not possible. Please create a new policy for snapshot-only backups.
+        /// </summary>
+        public static string AFSPolicyUpdateNotAllowed
+        {
+            get
+            {
+                return ResourceManager.GetString("AFSPolicyUpdateNotAllowed", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Changing the backup tier keeps current snapshots as-is under the existing policy. Future backups will be stored in the vault with new retention settings. This action is irreversible and incurs additional costs. Switching from vault to snapshot requires reconfiguration. Learn more at https://learn.microsoft.com/en-us/azure/backup/azure-file-share-backup-overview?tabs=snapshot.
+        /// </summary>
+        public static string AFSPolicyUpdateWarning
+        {
+            get
+            {
+                return ResourceManager.GetString("AFSPolicyUpdateWarning", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Changing Policy to VaultStandard tier.
+        /// </summary>
+        public static string AFSPolicyUpdate
+        {
+            get
+            {
+                return ResourceManager.GetString("AFSPolicyUpdate", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Canceled Operation.
+        /// </summary>
+        public static string AFSPolicyUpdateCanceled
+        {
+            get
+            {
+                return ResourceManager.GetString("AFSPolicyUpdateCanceled", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to SnapshotRetentionInDays should be from 1 - 30.
+        /// </summary>
+        public static string SnapshotRetentionInDaysInvalidException
+        {
+            get
+            {
+                return ResourceManager.GetString("SnapshotRetentionInDaysInvalidException", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to UndeleteContainer operation failed with ErrorCode: {0}.
+        /// </summary>
+        public static string UndeleteContainerFailureErrorCode
+        {
+            get
+            {
+                return ResourceManager.GetString("UndeleteContainerFailureErrorCode", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to undelete the container '{0}'.
+        /// </summary>
+        public static string UndeleteContainerWarning
+        {
+            get
+            {
+                return ResourceManager.GetString("UndeleteContainerWarning", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Undeleting container.
+        /// </summary>
+        public static string UndeleteContainerMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("UndeleteContainerMessage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Setting SoftDeleteFeatureState to 'AlwaysON' will automatically set HybridBackupSecurityFeature to AlwaysON. Please remove the DisableHybridBackupSecurityFeature parameter or use a different value for the SoftDeleteFeatureState parameter.
+        /// </summary>
+        public static string InvalidSoftDeleteFeatureStateException
+        {
+            get
+            {
+                return ResourceManager.GetString("InvalidSoftDeleteFeatureStateException", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Both Token and SecureToken parameters cannot be provided together.
+        /// </summary>
+        public static string BothTokenProvided
+        {
+            get
+            {
+                return ResourceManager.GetString("BothTokenProvided", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to The Token parameter is deprecated and will be removed in future versions. Please use SecureToken instead.
+        /// </summary>
+        public static string TokenParameterDepricate
+        {
+            get
+            {
+                return ResourceManager.GetString("TokenParameterDepricate", resourceCulture);
+            }
+        }
     }
 }

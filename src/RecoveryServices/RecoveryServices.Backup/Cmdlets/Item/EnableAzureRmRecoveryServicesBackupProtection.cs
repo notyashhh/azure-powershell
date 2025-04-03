@@ -98,11 +98,18 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
         public ItemBase Item { get; set; }
 
         /// <summary>
+        /// Parameter deprecated. Please use SecureToken instead
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = ModifyProtectionParameterSet, HelpMessage = ParamHelpMsgs.ResourceGuard.TokenDepricated, ValueFromPipeline = false)]
+        [ValidateNotNullOrEmpty]
+        public string Token;
+
+        /// <summary>
         /// Parameter to authorize operations protected by cross tenant resource guard. Use command (Get-AzAccessToken -TenantId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx").Token to fetch authorization token for different tenant.
         /// </summary>
         [Parameter(Mandatory = false, ParameterSetName = ModifyProtectionParameterSet, HelpMessage = ParamHelpMsgs.ResourceGuard.AuxiliaryAccessToken, ValueFromPipeline = false)]
         [ValidateNotNullOrEmpty]
-        public string Token;
+        public System.Security.SecureString SecureToken;
 
         /// <summary>
         /// List of Disk LUNs to include in backup
@@ -162,6 +169,8 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
                     shouldProcessName = Item.Name;
                     isMUAOperation = true;
                 }
+                
+                string plainToken = HelperUtils.GetPlainToken(Token, SecureToken);
 
                 if (ShouldProcess(shouldProcessName, VerbsLifecycle.Enable))
                 {
@@ -253,7 +262,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
                                 { ItemParams.ExclusionDisksList, ExclusionDisksList },
                                 { ItemParams.ResetExclusionSettings, ResetExclusionSettings },
                                 { ItemParams.ExcludeAllDataDisks, ExcludeAllDataDisks.IsPresent },
-                                { ResourceGuardParams.Token, Token },
+                                { ResourceGuardParams.Token, plainToken },
                                 { ResourceGuardParams.IsMUAOperation, isMUAOperation },
                             }, ServiceClientAdapter);
 
